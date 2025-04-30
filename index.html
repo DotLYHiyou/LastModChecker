@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LastModChecker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>LastModChecker</h1>
+    <p>Enter a url, and you will get the time the page was last modified.</p>
+    <input type="text" id="urlInput" placeholder="Enter a URL">
+    <button onclick="checkLastModified()">Check</button>
+    <p id="result"></p>
+    <p>Alpha V.01</p>
+    <script>
+            async function checkLastModified() {
+            const url = document.getElementById('urlInput').value;
+            try {
+                const response = await fetch(url, { method: 'HEAD' });
+                const lastModified = response.headers.get('Last-Modified');
+                document.getElementById('result').innerText = lastModified 
+                    ? `Last Modified: ${lastModified}` 
+                    : "No Last-Modified header found.";
+            } catch (error) {
+                document.getElementById('result').innerText = "Error fetching the URL.";
+            }
+        }
+
+           
+    </script>
+</body>
+</html>
