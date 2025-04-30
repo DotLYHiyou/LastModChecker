@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>LastModChecker</h1>
-    <p>Enter a url, and you will get the time the page was last modified.</p>
+    <p>Enter a url, and you will get the time the page was last modified. The date may not show up on alot of websties because of pesky CORS Restrictions, which basically blocks fetching a page's metadata.</p>
     <input type="text" id="urlInput" placeholder="Enter a URL">
     <button onclick="checkLastModified()">Check</button>
     <p id="result"></p>
-    <p>Alpha V.01</p>
+    <p>Alpha V.02</p>
     <script>
             async function checkLastModified() {
             const url = document.getElementById('urlInput').value;
