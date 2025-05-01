@@ -8,16 +8,17 @@
 </head>
 <body>
     <h1>LastModChecker</h1>
-    <p>Enter a url, and you will get the time the page was last modified. The date may not show up on alot of websties because of pesky CORS Restrictions, which basically blocks fetching a page's metadata.</p>
+    <p>Enter a URL, and you will get the time the page was last modified.</p>
     <input type="text" id="urlInput" placeholder="Enter a URL">
     <button onclick="checkLastModified()">Check</button>
     <p id="result"></p>
-    <p>Alpha V.02</p>
+    <p>Beta V.3</p>
     <script>
-            async function checkLastModified() {
+        async function checkLastModified() {
             const url = document.getElementById('urlInput').value;
+            const proxy = "https://corsanywhere-dotlyhiyou.onrender.com"; 
             try {
-                const response = await fetch(url, { method: 'HEAD' });
+                const response = await fetch(proxy + url, { method: 'HEAD' });
                 const lastModified = response.headers.get('Last-Modified');
                 document.getElementById('result').innerText = lastModified 
                     ? `Last Modified: ${lastModified}` 
@@ -26,8 +27,6 @@
                 document.getElementById('result').innerText = "Error fetching the URL.";
             }
         }
-
-           
     </script>
 </body>
 </html>
