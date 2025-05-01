@@ -16,7 +16,7 @@
     <script>
         async function checkLastModified() {
             const url = document.getElementById('urlInput').value;
-            const proxy = "https://corsanywhere-dotlyhiyou.onrender.com"; 
+            const proxy = "https://corsanywhere-dotlyhiyou.onrender.com/"; 
             try {
                 const response = await fetch(proxy + url, { method: 'HEAD' });
                 const lastModified = response.headers.get('Last-Modified');
