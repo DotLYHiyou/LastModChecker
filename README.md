@@ -26,7 +26,7 @@ LastModChecker is a lightweight and practical tool designed to retrieve the `Las
 
 ## Visit the Live Website
 
-[Visit the live website](#) to access LastModChecker directly in your browser.
+[Visit the live website]("https://lastmodchecker.vercel.app/") to access LastModChecker directly in your browser.
 
 ## Usage
 
